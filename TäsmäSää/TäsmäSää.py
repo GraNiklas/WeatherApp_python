@@ -37,7 +37,7 @@ def WriteToLog(timestamp, location, temperature):
 def Begin():
     if not os.path.exists(paikkakunnatPath):
         with open(paikkakunnatPath, 'a') as pk:
-            pk.write("Paikkakunnat;:" + '\n')
+            pk.write("" + '\n')
     
     if not paikkakunnat:
         with open(paikkakunnatPath, 'r', encoding='utf-8') as pk:
