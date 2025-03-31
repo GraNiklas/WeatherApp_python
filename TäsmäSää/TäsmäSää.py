@@ -1,6 +1,5 @@
 import requests
 from xml.etree import ElementTree
-import feedparser
 from datetime import datetime
 import os
 
@@ -23,14 +22,14 @@ päivät = ['Maanantai','Tiistai','Keskiviikko','Torstai','Perjantai','Lauantai'
 # print(sää)
 
 paikkakunnatPath = "valitutPaikkakunnat.txt"
-paikkakunnat = ["Porvoo"]
+paikkakunnat = []
 
 def WriteToLog(timestamp, location, temperature):
     logPath = "log.txt"
     if not os.path.exists(logPath):
          with open(logPath, 'a') as pk:
             pk.write("Loki:" + '\n')
-    log_entry = f"{timestamp} - {location}: {temperature}°C\n"
+    log_entry = f"{timestamp} - {location}: {temperature}\n"
     with open(logPath, "a", encoding="utf-8") as log_file:
         log_file.write(log_entry)
 
@@ -82,6 +81,7 @@ def Begin():
 
 #tähän piti kyllä käyttää chatgpt:een apua, en saanut haettua dataa ilmatieteen sivulta ja niiden ohjeet on aika sekavat.
 def HaeLämpöTilat(paikkakunnat):
+    success = 0
     for pk in paikkakunnat:
         url = f"https://opendata.fmi.fi/wfs?service=WFS&version=2.0.0&request=getFeature&storedquery_id=fmi::observations::weather::simple&place={pk}&parameters=temperature"
         response = requests.get(url)
@@ -106,14 +106,16 @@ def HaeLämpöTilat(paikkakunnat):
                 timestamp = datetime.strptime(viimeisin[0], "%Y-%m-%dT%H:%M:%SZ")
                 formatted_timestamp = timestamp.strftime("%d.%m.%Y %H:%M")
                 temperature = viimeisin[1]
-                print(f"{pk}: {temperature} °C ({formatted_timestamp})")
-                WriteToLog(formatted_timestamp,pk,temperature)
+                print(f"{pk:<10} {temperature:>10}°C   ({formatted_timestamp})")
+                WriteToLog(formatted_timestamp,pk,f"{temperature}°C")
+                success += 1
             else:
+                WriteToLog(formatted_timestamp,pk,"Haku virhe")
                 print(f"{pk}: Ei löydy lämpötilatietoa")
         else:
-            print(f"Virhe: {pk} - HTTP {response.status_code}")
+            WriteToLog(formatted_timestamp,pk,"Haku virhe")
 
-    
+    WriteToLog(datetime.now(),success," paikkakunnan lämpötilat haettiin onnistuneesti")
 
 Begin()
 

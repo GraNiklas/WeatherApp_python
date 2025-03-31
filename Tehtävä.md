@@ -19,8 +19,11 @@ tulostaa tiedot siististi allekkain konsoli-ikkunaan "Paikkakunta - tab - lämp�
 Kirjoita myös tiedostopohjaista lokia paikkakuntakohtaisesta lämpötilahausta:
 hakuajanhetki
 jos käyttäjä antoi sellaisen paikkakunnan, jonka lämpötilatietoa ei löydy (eli tulee jokin virhetilanne), kirjoitetaan lokiin ko. paikkakunnan nimi sekä teksti "Hakuvirhe"
+
 jos taas haku onnistuu, lokiin kirjoitetaan monenko paikkakunnan lämpötila tuli haettua onnistuneesti
+
 lokia ei ylikirjoiteta (käyttäjä voi poistaa sen käsin halutessaan)
+
 Suunnittele ohjelmaan looginen lopetustapa
 Vinkki: kanattaa käyttää Pythonin Requests kirjastoa http pyyntöön.
 Yritä ratkaista tehtävä itse, mutta jos jäät junnaamaan paikallesi, voit katsoa vinkkiä täältä. Älä kuitenkaan kopioi koodia sellaisenaan, vaan tutki ideaa ja tee sitten sen pohjalta omaan toteutukseesi korjaukset:

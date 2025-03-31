@@ -2,3 +2,31 @@ Loki:
 31.03.2025 18:40 - Porvoo: 6.7°C
 31.03.2025 18:40 - Porvoo: 6.7°C
 31.03.2025 19:10 - Porvoo: 6.0°C
+Haettiin 3 paikkakunnan lämpötilat onnistuneesti.
+31.03.2025 19:20 - Porvoo: 6.1°C
+Haettiin 3 paikkakunnan lämpötilat onnistuneesti.
+31.03.2025 19:20 - Helsinki: 6.5°C
+Haettiin 3 paikkakunnan lämpötilat onnistuneesti.
+31.03.2025 19:28 - Sipoo: 7.8°C
+Haettiin 3 paikkakunnan lämpötilat onnistuneesti.
+31.03.2025 19:20 - Porvoo: 6.1°C
+Haettiin 3 paikkakunnan lämpötilat onnistuneesti.
+31.03.2025 19:20 - Helsinki: 6.5°C
+Haettiin 3 paikkakunnan lämpötilat onnistuneesti.
+31.03.2025 19:28 - Sipoo: 7.8°C
+31.03.2025 19:30 - Porvoo: 5.8°C
+31.03.2025 19:20 - Helsinki: 6.5°C
+31.03.2025 19:38 - Sipoo: 8.1°C
+2025-03-31 22:40:36.019007 - 3:  paikkakunnan lämpötilat haettiin onnistuneesti
+31.03.2025 19:30 - Porvoo: 5.8°C
+31.03.2025 19:20 - Helsinki: 6.5°C
+31.03.2025 19:38 - Sipoo: 8.1°C
+2025-03-31 22:42:04.627590 - 3:  paikkakunnan lämpötilat haettiin onnistuneesti
+31.03.2025 19:30 - Porvoo: 5.8°C
+31.03.2025 19:40 - Helsinki: 6.7°C
+31.03.2025 19:38 - Sipoo: 8.1°C
+2025-03-31 22:43:35.174802 - 3:  paikkakunnan lämpötilat haettiin onnistuneesti
+31.03.2025 19:40 - Porvoo: 5.6°C
+31.03.2025 19:40 - Helsinki: 6.7°C
+31.03.2025 19:38 - Sipoo: 8.1°C
+2025-03-31 22:45:35.340909 - 3:  paikkakunnan lämpötilat haettiin onnistuneesti
