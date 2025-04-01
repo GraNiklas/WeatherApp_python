@@ -16,8 +16,8 @@ day = datetime.today().weekday()
 
 päivät = ['Maanantai','Tiistai','Keskiviikko','Torstai','Perjantai','Lauantai','Sunnuntai']
 
-kyllä = "\033[32m 'k' \033[0m"
-ei = "\033[31m 'x' \033[0m"
+kyllä = "'k'"
+ei = "'x'"
 
 paikkakunnatPath = "valitutPaikkakunnat.txt"
 paikkakunnat = []
@@ -48,7 +48,7 @@ def Begin():
     print("Nyt on", päivät[day], datetime.now().replace(microsecond=0))
     print("Valitut paikkakunnat: ")
     for pk in paikkakunnat:
-        print(f"\033[34m{pk}\033[0m")
+        print(f"{pk}")
     textInput = ""
     while textInput != "x":
         print()
@@ -67,7 +67,7 @@ def Begin():
     print()
     print("Valitut paikkakunnat: ")
     for pk in paikkakunnat:
-        print(f"\033[34m{pk}\033[0m")
+        print(f"{pk}")
     with open(paikkakunnatPath, 'w', encoding='utf-8') as pk_file:
         for paikkakunta in paikkakunnat:
             pk_file.write(paikkakunta + '\n')  # uudelle riville
@@ -113,7 +113,7 @@ def HaeLämpöTilat(paikkakunnat):
                 timestamp = datetime.strptime(viimeisin[0], "%Y-%m-%dT%H:%M:%SZ")
                 formatted_timestamp = timestamp.strftime("%d.%m.%Y %H:%M")
                 temperature = viimeisin[1]
-                print(f"{f"\033[34m{pk}\033[0m":<20} {f"\033[33m{temperature}°C\033[0m":>20}   ({formatted_timestamp})")
+                print(f"{f"{pk}":<20} {f"{temperature}°C":>20}   ({formatted_timestamp})")
                 print("-" * 50)
                 WriteToLog(formatted_timestamp,pk,f"{temperature}°C")
                 success += 1
