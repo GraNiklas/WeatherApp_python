@@ -11,15 +11,13 @@ namespaces = {
 
 url = 'https://opendata.fmi.fi/wfs?service=WFS&version=2.0.0&request=getFeature&storedquery_id=fmi::observations::weather::simple&place=Helsinki&parameters=temperature'
 
-# feed = feedparser.parse(url)
 
 day = datetime.today().weekday()
 
 päivät = ['Maanantai','Tiistai','Keskiviikko','Torstai','Perjantai','Lauantai','Sunnuntai']
 
-# sää = feed.entries[0].summary_detail.value
-
-# print(sää)
+kyllä = "\033[32m 'k' \033[0m"
+ei = "\033[31m 'x' \033[0m"
 
 paikkakunnatPath = "valitutPaikkakunnat.txt"
 paikkakunnat = []
@@ -35,6 +33,8 @@ def WriteToLog(timestamp, location, temperature):
 
 
 def Begin():
+    global kyllä
+    global ei
     if not os.path.exists(paikkakunnatPath):
         with open(paikkakunnatPath, 'a') as pk:
             pk.write("" + '\n')
@@ -43,17 +43,20 @@ def Begin():
         with open(paikkakunnatPath, 'r', encoding='utf-8') as pk:
             for line in pk:
                 paikkakunnat.append(line.strip())
-    print("Nyt on", päivät[day], datetime.now())
+    print()
+    print("Tervetuloa täsmäsää sovellukseen!")
+    print("Nyt on", päivät[day], datetime.now().replace(microsecond=0))
     print("Valitut paikkakunnat: ")
     for pk in paikkakunnat:
-        print(pk)
+        print(f"\033[34m{pk}\033[0m")
     textInput = ""
     while textInput != "x":
-        textInput = input("Haluatko muuttaa seurattavia paikkakuntia? 'k','x'")
+        print()
+        textInput = input(f"Haluatko muuttaa seurattavia paikkakuntia? {kyllä},{ei}")
         if textInput == "k":
             paikkakunnat.clear()
             while textInput != "x":
-                textInput = input("Syötä uusi paikkakunta. Lopeta syöttämällä 'x'")
+                textInput = input(f"Syötä uusi paikkakunta. Lopeta syöttämällä {ei}")
                 if textInput == "x":
                     break
                 else:
@@ -61,17 +64,21 @@ def Begin():
         else:
             break
     
+    print()
     print("Valitut paikkakunnat: ")
     for pk in paikkakunnat:
-        print(pk)
+        print(f"\033[34m{pk}\033[0m")
     with open(paikkakunnatPath, 'w', encoding='utf-8') as pk_file:
         for paikkakunta in paikkakunnat:
-            pk_file.write(paikkakunta + '\n')  # Writes each item on a new line
+            pk_file.write(paikkakunta + '\n')  # uudelle riville
 
     textInput = ""
     while textInput != "x":
-        textInput = input("Haluatko hakea lämpötilatiedon Ilmatieteenlaitokselta? 'k' 'x'")
+        print()
+        textInput = input(f"Haluatko hakea lämpötilatiedon Ilmatieteenlaitokselta?{kyllä} {ei}")
+        
         if textInput == "k":
+            print()
             HaeLämpöTilat(paikkakunnat)
             break
         else:
@@ -79,7 +86,7 @@ def Begin():
 
 
 
-#tähän piti kyllä käyttää chatgpt:een apua, en saanut haettua dataa ilmatieteen sivulta ja niiden ohjeet on aika sekavat.
+#tähän datan hakemiseen piti kyllä käyttää chatgpt:een apua, en saanut haettua dataa ilmatieteen sivulta ja niiden ohjeet on aika sekavat.
 def HaeLämpöTilat(paikkakunnat):
     success = 0
     for pk in paikkakunnat:
@@ -106,7 +113,8 @@ def HaeLämpöTilat(paikkakunnat):
                 timestamp = datetime.strptime(viimeisin[0], "%Y-%m-%dT%H:%M:%SZ")
                 formatted_timestamp = timestamp.strftime("%d.%m.%Y %H:%M")
                 temperature = viimeisin[1]
-                print(f"{pk:<10} {temperature:>10}°C   ({formatted_timestamp})")
+                print(f"{f"\033[34m{pk}\033[0m":<20} {f"\033[33m{temperature}°C\033[0m":>20}   ({formatted_timestamp})")
+                print("-" * 50)
                 WriteToLog(formatted_timestamp,pk,f"{temperature}°C")
                 success += 1
             else:
@@ -117,5 +125,10 @@ def HaeLämpöTilat(paikkakunnat):
 
     WriteToLog(datetime.now(),success," paikkakunnan lämpötilat haettiin onnistuneesti")
 
-Begin()
+
+textInput = ""
+while textInput != "x":
+    Begin()
+    print()
+    textInput = input(f"Tee uusi haku? {kyllä},{ei}")
 

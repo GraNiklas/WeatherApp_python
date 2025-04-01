@@ -30,3 +30,47 @@ Haettiin 3 paikkakunnan lämpötilat onnistuneesti.
 31.03.2025 19:40 - Helsinki: 6.7°C
 31.03.2025 19:38 - Sipoo: 8.1°C
 2025-03-31 22:45:35.340909 - 3:  paikkakunnan lämpötilat haettiin onnistuneesti
+01.04.2025 07:20 - Porvoo: 5.3°C
+01.04.2025 07:20 - Helsinki: 8.2°C
+01.04.2025 07:25 - Sipoo: 5.6°C
+2025-04-01 10:26:34.396413 - 3:  paikkakunnan lämpötilat haettiin onnistuneesti
+01.04.2025 07:30 - Porvoo: 6.0°C
+01.04.2025 07:30 - Helsinki: 8.2°C
+01.04.2025 07:36 - Sipoo: 5.7°C
+2025-04-01 10:38:47.389012 - 3:  paikkakunnan lämpötilat haettiin onnistuneesti
+01.04.2025 07:30 - Porvoo: 6.0°C
+01.04.2025 07:30 - Helsinki: 8.2°C
+01.04.2025 07:36 - Sipoo: 5.7°C
+2025-04-01 10:41:32.815653 - 3:  paikkakunnan lämpötilat haettiin onnistuneesti
+01.04.2025 07:30 - Porvoo: 6.0°C
+01.04.2025 07:30 - Helsinki: 8.2°C
+01.04.2025 07:36 - Sipoo: 5.7°C
+2025-04-01 10:42:38.669140 - 3:  paikkakunnan lämpötilat haettiin onnistuneesti
+01.04.2025 07:30 - Porvoo: 6.0°C
+01.04.2025 07:30 - Helsinki: 8.2°C
+01.04.2025 07:36 - Sipoo: 5.7°C
+2025-04-01 10:44:05.568533 - 3:  paikkakunnan lämpötilat haettiin onnistuneesti
+01.04.2025 07:40 - Porvoo: 6.3°C
+01.04.2025 07:40 - Helsinki: 8.1°C
+01.04.2025 07:49 - Sipoo: 7.1°C
+2025-04-01 10:51:00.982481 - 3:  paikkakunnan lämpötilat haettiin onnistuneesti
+01.04.2025 07:50 - Porvoo: 6.9°C
+01.04.2025 07:40 - Helsinki: 8.1°C
+01.04.2025 07:49 - Sipoo: 7.1°C
+2025-04-01 10:55:28.006668 - 3:  paikkakunnan lämpötilat haettiin onnistuneesti
+01.04.2025 07:50 - Porvoo: 6.9°C
+01.04.2025 07:40 - Helsinki: 8.1°C
+01.04.2025 07:56 - Sipoo: 6.7°C
+2025-04-01 10:58:33.331358 - 3:  paikkakunnan lämpötilat haettiin onnistuneesti
+01.04.2025 07:50 - Porvoo: 6.9°C
+01.04.2025 07:40 - Helsinki: 8.1°C
+01.04.2025 07:56 - Sipoo: 6.7°C
+2025-04-01 10:59:51.774966 - 3:  paikkakunnan lämpötilat haettiin onnistuneesti
+01.04.2025 07:50 - Porvoo: 6.9°C
+01.04.2025 07:50 - Helsinki: 8.4°C
+01.04.2025 07:56 - Sipoo: 6.7°C
+2025-04-01 11:01:31.597914 - 3:  paikkakunnan lämpötilat haettiin onnistuneesti
+01.04.2025 07:50 - Porvoo: 6.9°C
+01.04.2025 07:50 - Helsinki: 8.4°C
+01.04.2025 07:56 - Sipoo: 6.7°C
+2025-04-01 11:02:08.248258 - 3:  paikkakunnan lämpötilat haettiin onnistuneesti
